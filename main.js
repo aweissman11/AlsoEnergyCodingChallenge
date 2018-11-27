@@ -10,6 +10,24 @@ var employees = [
 
 // Part 2 Answer Here
 
+const departmentSort = employees.reduce( (acc, employee) => {
+    const { group, first, last } = employee
+    const person = {
+        name: `${first} ${last}`
+    }
+
+    if (!acc[group]) {
+        acc[group] = [];
+        acc[group].push(person)
+    } else {
+        acc[group].push(person);
+    }
+
+    return acc;
+}, {})
+
+console.log(departmentSort)
+
 /*****************************************************************************************
 * Bonus
 ****************************************************************************************/
